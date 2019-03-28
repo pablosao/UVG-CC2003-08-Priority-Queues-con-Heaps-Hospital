@@ -28,12 +28,19 @@ public class SistemaIngreso {
 
             switch (opcion){
                 case 1:
+                    System.out.print("Ingrese el path del archivo: ");
+                    String path = Keyboard.readString();
+
+                    if(DataManager.getExists(path)){
+                        //Llamado a la clase para realizar proceso
+                    }
+                    else{
+                        System.out.println("El archivo no fue encontrado");
+                    }
                     break;
                 case 2:
                     System.exit(0);
             }
         }
-
-
     }
 }
