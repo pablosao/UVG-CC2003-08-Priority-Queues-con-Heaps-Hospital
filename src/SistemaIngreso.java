@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Stack;
+
 /***
  * Clase principal para el manejo de la aplicación
  * @author Pablo Sao
@@ -7,10 +11,10 @@
 public class SistemaIngreso {
 
     //Variable que contiene el menú inicial a mostrar
-    final static String MENU_INICIO = "\n\t\tMenú" +
-                                      "\n1.) Cargar Archivo de Pacientes." +
-                                      "\n2.) Salir.";
-    final static String INSTRUCCIONES = "Ingrese el número de opción del menú: ";
+    final static String MENU_INICIO = "\n\t\t\t\tMenú" +
+                                      "\n\t1.) Cargar Archivo de Pacientes." +
+                                      "\n\t2.) Salir.";
+    final static String INSTRUCCIONES = "\nIngrese el número de opción del menú: ";
 
     public static void main(String[] args){
 
@@ -28,14 +32,33 @@ public class SistemaIngreso {
 
             switch (opcion){
                 case 1:
-                    System.out.print("Ingrese el path del archivo: ");
+                    System.out.print("\nIngrese el path del archivo: ");
                     String path = Keyboard.readString();
 
                     if(DataManager.getExists(path)){
-                        //Llamado a la clase para realizar proceso
+                        //Llamado a la clase para realizar proces
+
+                        String dato = DataManager.getDataFile(path,"\t");
+                        try{
+                            ArrayList info = (ArrayList)DataManager.getStringTokens("\t",dato);
+
+                            if(!info.isEmpty()){
+                                Hospital h = new Hospital();
+                                h.setDatos(info);
+                                h.manejoHospital();
+                            }
+                            else{
+                                System.out.println("\n\n\t\t\tEl archivo se encuentra vacio");
+                            }
+
+                        }
+                        catch (Exception e){
+                            System.out.println(e.toString());
+                        }
+
                     }
                     else{
-                        System.out.println("\n\t\tEl archivo no fue encontrado");
+                        System.out.println("\n\t\tEl archivo no fue encontrado\n");
                     }
                     break;
                 case 2:

@@ -42,6 +42,33 @@ public class DataManager {
     }
 
     /***
+     * Obtención del contenido de un archivo, pesonalizando el salto de pagina
+     * @param PATH_FILE ubicación del archivo a leer
+     * @param SALTO delimitador para identificar el salto de una linea del documento
+     * @return String con el contenido del archivo
+     */
+    public static String getDataFile(String PATH_FILE,String SALTO){
+        BufferedReader reader;
+        String linea,datos = "";
+
+        try{
+            reader = new BufferedReader(new FileReader(PATH_FILE));
+
+            while((linea = reader.readLine()) != null){
+                datos += linea + SALTO;
+            }
+            // Cerramos la conexion
+            reader.close();
+
+        }
+        //Tomaremos todo tipo de error en la ejecución del bloque de codigo dentro del catch
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+        return datos;
+    }
+    /***
      * Metodo para verificar la existencia del archivo ingresado
      * @return true si el archivo existe, false si el archivo no existe
      */
