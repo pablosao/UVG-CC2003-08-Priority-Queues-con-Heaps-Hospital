@@ -21,7 +21,7 @@ public class SistemaIngreso {
             System.out.println(MENU_INICIO);
 
             //Mostramos las instrucciones al usuario
-            System.out.println(INSTRUCCIONES);
+            System.out.print(INSTRUCCIONES);
 
             //Leemos la opción deseada por el usuario
             int opcion = Keyboard.readInt();
@@ -35,7 +35,7 @@ public class SistemaIngreso {
                         //Llamado a la clase para realizar proceso
                     }
                     else{
-                        System.out.println("El archivo no fue encontrado");
+                        System.out.println("\n\t\tEl archivo no fue encontrado");
                     }
                     break;
                 case 2:
