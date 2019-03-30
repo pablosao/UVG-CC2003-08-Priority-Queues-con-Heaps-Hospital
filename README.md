@@ -1,6 +1,6 @@
 # Priority Queues con Heaps
 
-El laboratorio N|8 para la clase de Algoritmos y Estructura de Datos de la univerisdad del Valle de Guatemala, consiste en la elaboración de un control de lista de espera de pacientes.
+El laboratorio N°8 para la clase de Algoritmos y Estructura de Datos de la univerisdad del Valle de Guatemala, consiste en la elaboración de un control de lista de espera de pacientes.
 
 Donde existe un código de emergencia, el cual es una letra de la A a la E, que indica la prioridad con que debe ser atendido el paciente. La prioridad A es la que más rápido debe ser atendida y la E es la que puede atenderse más lentamente, ya que no presenta una condición mortal o de gran peligro para el paciente. 
  
