@@ -1,6 +1,6 @@
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Stack;
+
 
 /***
  * Clase principal para el manejo de la aplicación
